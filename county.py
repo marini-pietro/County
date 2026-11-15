@@ -66,9 +66,19 @@ def perform_count(file_path: str, recursive: bool = False) -> None:
         for root, dirs, files in os.walk(file_path):
             for file in files:
                 if any(file.endswith(ext) for ext in KNOWN_EXTENSIONS):
-                    total_lines += count_code_lines(
-                        file_path=os.path.join(root, file), extension=os.path.splitext(file)[1]
+
+                    # Construct the full path to the current file.
+                    current_file_path = os.path.join(root, file)
+
+                    # Count lines in the current file and add to total.
+                    file_lines = count_code_lines(
+                        file_path=current_file_path, extension=os.path.splitext(file)[1]
                     )
+                    total_lines += file_lines
+
+                    # If recursive is True, print the line count for each file.
+                    if recursive:
+                        print(f"Lines of code in '{current_file_path}': {file_lines}")
 
             # If not recursive, break after the first directory level.
             if not recursive:
@@ -76,16 +86,16 @@ def perform_count(file_path: str, recursive: bool = False) -> None:
 
     # If the path is neither a file nor a directory, print an error message.
     else:
-        print(f"Error: {file_path} is not a valid file or directory.")
+        print(f"\nError: {file_path} is not a valid file or directory.\n")
         return
 
     if total_lines == 0:
-        print(f"No lines of code found in '{file_path}'.")
+        print(f"\nNo lines of code found in '{file_path}'.\n")
 
     if recursive:
-        print(f"Total lines of code in '{file_path}' (including subdirectories): {total_lines}")
+        print(f"\nTotal lines of code in '{file_path}' (including subdirectories): {total_lines}\n")
     else:
-        print(f"Total lines of code in '{file_path}': {total_lines}")
+        print(f"\nTotal lines of code in '{file_path}': {total_lines}\n")
 
     return
 

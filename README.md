@@ -24,7 +24,7 @@ The repository includes `county.cmd`, a Windows command shim that runs `county.p
 1. Add this repository folder to your user PATH:
 
    ```powershell
-   $countyPath = "C:\Users\pmari\Documents\GitHub\County"
+   $countyPath = "C:\your\path\to\repo\folder"
    [Environment]::SetEnvironmentVariable(
        "Path",
        [Environment]::GetEnvironmentVariable("Path", "User") + ";$countyPath",
@@ -40,7 +40,7 @@ The repository includes `county.cmd`, a Windows command shim that runs `county.p
    county -r C:\path\to\project
    ```
 
-The `python` command must be available on PATH. 
+The `python` command must be available on PATH.  
 If your Python installation uses the Python launcher instead, change `python` to `py` in `county.cmd`.
 
 ## Run from any directory on Linux or macOS
