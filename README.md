@@ -1,13 +1,14 @@
 # County
 
 > [!NOTE]
-> Python is required to use the command with the provided command shims. 
+> Python is required to use the command with the provided command shims.  
 > Instruction on how to build a standalone executable are available below.
 
-Whenever I am writing some code for a project I sometimes wonder how many lines of code I have written. This project is a simple command line tool that counts the number of lines in a given file or directory.  
+Whenever I am writing some code for a project I sometimes wonder how many lines of code I have written.  
+This project is a simple command line tool that counts the number of lines in a given file or directory.   
 It can be useful for developers who want to keep track of their codebase size or for anyone who wants to analyze the size of their text files but I've just made it for fun :)  
 
-Supports project directories with multiple file types and can be run recursively to count lines in subdirectories.
+Supports project directories with multiple file types and can be run recursively to count lines in subdirectories.  
 
 ## Windows command shim explained
 
@@ -44,9 +45,9 @@ If your Python installation uses the Python launcher instead, change `python` to
 
 ## Run from any directory on Linux or macOS
 
-> [!IMPORTANT]
-> Not tested, I don't use Linux regularly for day-to-day development.
-> Please let me know if you encounter any issues.
+> [!IMPORTANT]  
+> Not tested, I don't use Linux regularly for day-to-day development.  
+> Please let me know if you encounter any issues.  
 
 The repository includes `county`, an executable shell script that runs `county.py`.
 
