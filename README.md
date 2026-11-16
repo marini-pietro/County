@@ -21,7 +21,7 @@ Supports project directories with multiple file types and can be run recursively
 
 The repository includes `county.cmd`, a Windows command shim that runs `county.py`.
 
-1. Add this repository folder to your user PATH:
+1. Add this repository folder to your user PATH (this can also be done with the Windows GUI):
 
    ```powershell
    $countyPath = "C:\your\path\to\repo\folder"
@@ -40,6 +40,7 @@ The repository includes `county.cmd`, a Windows command shim that runs `county.p
    county -r C:\path\to\project
    ```
 
+You may need to or, at least, restart all open Powershell/CMD instances.
 The `python` command must be available on PATH.  
 If your Python installation uses the Python launcher instead, change `python` to `py` in `county.cmd`.
 
